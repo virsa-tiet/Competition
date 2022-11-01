@@ -32,41 +32,87 @@ def home(request):
     
     
 def come(request):
-    # all_participants= Participant.objects.all
+    
     if request.method == "POST" :
-        form= ParticipantForm(request.POST)
+        # form= ParticipantForm(request.POST)
+        name = request.POST['name']
+        branch = request.POST['branch']
+        phone = request.POST['phone']
+        roll = request.POST['roll']
+        email = request.POST['email']
+        subit = request.POST['subit']
+        data=Participant.objects.create(
+        name=name,
+        branch=branch,
+        email =email,
+        roll= roll,
+        phone=phone,
+        subit=subit
+        )
+        data.save()
+        with open('participants1.csv', 'a', newline='') as csvfile:
+                    # spamwriter = csv.writer(csvfile, delimiter=' ',
+                    #         quotechar='|', quoting=csv.QUOTE_MINIMAL)
+                    # spamwriter.writerow(['name','branch','email','roll','phone','subit'])  
+                    spamwriter= csv.writer(csvfile)
+                    data1=[name,branch,email,roll,phone,subit]
+                    spamwriter.writerow(data1) 
         
-        if form.is_valid():
-            form.save()
-            # for Participant in all_participants:
-            with open('participants.csv', 'w', newline='') as csvfile:
-                    spamwriter = csv.writer(csvfile, delimiter=' ',
-                            quotechar='|', quoting=csv.QUOTE_MINIMAL)
+        return render(request,'thankyou.html')     
+    return render(request , 'come.html')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# data=Participant.objects.create(
+        # name=name,
+        # branch=branch,
+        # email =email,
+        # roll= roll,
+        # phone=phone,
+        # subit=subit
+        # )
+        # data.save()
+        # form.save()
+
+
+
+# context={ 'name':name,
+        #      'branch':branch,
+        #      'email' :email,
+        #      'roll': roll,
+        #       'phone':phone,
+        #       'subit':subit
+        #      }
+
+
+
+
+  
+        # if form.is_valid():
+        #     form.save()
+            
+        #     with open('participants.csv', 'w', newline='') as csvfile:
+        #             spamwriter = csv.writer(csvfile, delimiter=' ',
+        #                     quotechar='|', quoting=csv.QUOTE_MINIMAL)
                        
-                    spamwriter.writerow(['name','branch','email','roll','phone','subit'])
-                    m_feilds=all_participants.values_list('name','branch','email','roll','phone','subit')
-                    for Participant in m_feilds:
-                        spamwriter.writerow(Participant)      
-        else :
-            name = request.POST['name']
-            branch = request.POST['branch']
-            phone = request.POST['phone']
-            roll = request.POST['roll']
-            email = request.POST['email']
-            subit = request.POST['subit']
-            messages.success(request,('error'))
-            # return redirect('come')
-            return render(request , 'come.html' , { 'name':name,
-             'branch':branch,
-             'email' :email,
-             'roll': roll,
-              'phone':phone,
-              'subit':subit
-             
-             })
-        messages.success(request, ('submitted'))
-        return render(request,'thankyou.html')
-        # return redirect('thankyou.html')
-    else :
-         
-        return render(request , 'come.html' , {})
+        #             spamwriter.writerow(['name','branch','email','roll','phone','subit'])
+        #             m_feilds=all_participants.values_list('name','branch','email','roll','phone','subit')
+        #             for Participant in m_feilds:
+        #                 spamwriter.writerow(Participant)      
+        
