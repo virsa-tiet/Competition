@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+    
+ <h3 style="color: white;">Entries</h3>
+ <hr>
+        {% for item in all %}
+         <p style="color: white;" id="para"> Name: {{ item.name }}</p> 
+         <p style="color: white;" id="para"> Email: {{ item.email }}</p> 
+         <p style="color: white;" id="para">  Branch: {{ item.branch }} </p>
+         <p style="color: white;" id="para">  roll: {{ item.roll }} </p>
+          <hr>
+        {% endfor %}        
+
+{% endblock %}
