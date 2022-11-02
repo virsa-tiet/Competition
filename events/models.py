@@ -10,7 +10,7 @@ class Participant(models.Model):
     phone = models.IntegerField()
     email= models.EmailField(max_length=50)
     subit = models.URLField(max_length=200)
-    subit1 = models.FileField()
+    subit1 = models.CharField(max_length=50)
 
     def __str__(self):
         return self.name

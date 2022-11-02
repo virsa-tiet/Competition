@@ -4,14 +4,19 @@
     
 } */
 
-
-
+#drop{
+    margin-top: 50px;
+    
+}
+body{
+    color: black !important;
+}
 .form-label{
     font: 1.1em sans-serif;
     color: whitesmoke;
 }
 .mb-3{
-    background-color: transparent;
+    margin-top: 36px;
 }
 #my{
    
@@ -24,6 +29,28 @@
 form{
     text-align:center;
 }
+::placeholder{
+    color:  white;
+}
+#boxing{
+    
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
+    color: black;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid #fff;
+    outline: none;
+    background: transparent;
+    text-align: center;
+    /* width: 500px;
+    box-shadow: 0 15px 25px rgba(0,0,0,.6);
+    border-bottom-style:  ;
+    border-radius: 16px;
+    height: 46px;
+    text-align: center; */
+}
 .main{
     text-align: center;
     margin-top:30px;
@@ -31,7 +58,8 @@ form{
     padding: 35px;
     width:40%;
     background: rgba(225, 225, 225, 0.2);
-    box-shadow: rgb(0, 0, 0,0.5);
+    /* box-shadow: rgb(0, 0, 0,0.5); */
+    box-shadow: 0 15px 25px rgba(0,0,0,.6);
     border-radius: 10px;
 }
 h1{
@@ -56,7 +84,7 @@ h1{
 }
 body{
     /* background:url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1x-gdHenXgND6YniEsEDkHSukAEDh9GQ1Xw&usqp=CAU"); */
-    background:url("https://t4.ftcdn.net/jpg/05/31/90/39/360_F_531903973_rJKgVd3oN2sY02AXuL5LtrCI1y9h8UCn.jpg");
+    background:url("https://images.unsplash.com/photo-1618022325802-7e5e732d97a1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8YmxhY2t8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60");
     background-position: center;
     background-size: cover !important;
     background-repeat: no-repeat;
@@ -93,11 +121,19 @@ body{
 
 input{
     word-break: break-word;
-    color: transparent !important;
-    
+    color: white !important;
+    background-color: transparent;
 }
 
 button{
     margin-top: 30px;
     text-align: center;
 }
+
+
+
+
+
+
+
+

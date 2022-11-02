@@ -5,52 +5,109 @@
  <img src="https://i.imgur.com/Kna9Nb2.png">
  <h1>Contest</h1>
  
- <form method="POST" action="https://sheetdb.io/api/v1/t40wj6o8yr3ds" id="sheetdb-form">
+ <form method="POST">
   <!-- action="{% url 'come'%}"              id="sheetdb-form" -->
+  <!-- action="https://sheetdb.io/api/v1/t40wj6o8yr3ds" -->
     {% csrf_token %}
-    <div class="form-floating mb-3">
-        <label  class="form-label" >Name</label>
-        <input  type="text"   name="data[name]" value="{{ name }}" required>
+    <div class=" mb-3">
+        <!-- <label  class="form-label" >Name</label> -->
+        <input id="boxing" type="text"  placeholder="Name" name="name" value="{{ name }}" required>
         
         
       </div>
       
-      <!-- <div class="mb-3">
-        <label  class="form-label">Branch</label>
-        <input  class="form-control"  name="data[branch]" value="{{ branch }}">
-        
-      </div> -->
-      <div class="form-floating mb-3">
-        <input type="text" class="form-control" id="2" placeholder="Branch" name="data[branch]" value="{{ branch }}"  required> 
-        <label for="2">Branch</label>
-    </div>
       <div class="mb-3">
-        <label for="exampleInputEmail1" class="form-label">Email address</label>
-        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="data[email]" value="{{ email }}" required>
+        <!-- <label  class="form-label">Branch</label> -->
+        <input  id="boxing" placeholder="Branch"  name="branch" value="{{ branch }}">
+        
+      </div>
+      <!-- <div class="form-floating mb-3">
+        <input type="text" class="form-control" id="2" placeholder="Branch" name="branch" value="{{ branch }}"  required> 
+        <label for="2">Branch</label>
+    </div> -->
+      <div class="mb-3">
+        <!-- <label for="exampleInputEmail1" class="form-label">Email address</label> -->
+        <input type="email" id="boxing" placeholder="Email" id="exampleInputEmail1" aria-describedby="emailHelp" name="email" value="{{ email }}" required>
        
       </div>
     <div class="mb-3">
-      <label  class="form-label">Roll no.</label>
-      <input class="form-control"  name="data[roll]" value="{{ roll }}"  required>
+      <!-- <label  class="form-label">Roll no.</label> -->
+      <input  id="boxing" placeholder="Roll Number" name="roll" value="{{ roll }}"  required>
      
     </div>
     
     <div class="mb-3">
-        <label  class="form-label">Phone no.</label>
-        <div id="my"><input class="form-control"  name="data[phone]" value="{{ phone }}" required></div>
+        <!-- <label  class="form-label">Phone no.</label> -->
+        <div id="my"><input id="boxing" placeholder="Phone Number"  name="phone" value="{{ phone }}" required></div>
        
       </div>
+
+      <div class="mb-3" id="drop">
+        <label class="form-label" for="dog-names">Choose type:</label>
+        <input type="op">
+        <select name="dog-names" id="dog-names">
+          <option value="rigatoni">option1</option>
+          <option value="dave">option2</option>
+          <option value="pumpernickel">option3</option>
+          <option value="reeses">option4</option>
+        </select>
+      </div>
+
+
+
+      <div class="input-group mb-3">
+        <button type="button" class="btn btn-outline-secondary">Action</button>
+        <button type="button" class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+          <span class="visually-hidden">Toggle Dropdown</span>
+        </button>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="#">Action</a></li>
+          <li><a class="dropdown-item" href="#">Another action</a></li>
+          <li><a class="dropdown-item" href="#">Something else here</a></li>
+          <li><hr class="dropdown-divider"></li>
+          <li><a class="dropdown-item" href="#">Separated link</a></li>
+        </ul>
+        <input type="text" name="subit1" value="{{ subit1 }}" id="boxing" aria-label="Text input with segmented dropdown button">
+      </div>
+
       <div class="mb-3">
-        <label  class="form-label">Drive Link</label>
-        <input class="form-control"  name="data[subit]" value="{{ subit }}">
-       
+        <!-- <label  class="form-label">Drive Link</label> -->
+        <input id="boxing" placeholder="Drive Link" name="subit" value="{{ subit }}">
+        
+        
+
       </div>
+      
     
     <!-- <div class="mb-3 form-check">
       <input type="checkbox" class="form-check-input" id="exampleCheck1">
       <label class="form-check-label" for="exampleCheck1">Check me out</label>
     </div> -->
     <button type="submit" class="btn btn-primary">Submit</button>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
   </form>
  {% endblock %}
 
